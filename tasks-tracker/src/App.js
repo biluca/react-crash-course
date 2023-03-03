@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Tasks from "./components/Tasks"
+import Panel from "./components/Panel"
 
 import { useState } from "react"
 
@@ -28,10 +29,20 @@ function App() {
       }
     ]
   )
+
+  const deleteTask = (id) => {
+    setTasks(
+      tasks.filter((task) => task.id !== id)
+    )
+  }
+
   return (
     <div className="container">
       <Header title="Tasks List" />
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} />
+        : <Panel text="You're Done! Take a Break!" />
+      }
+
     </div>
   );
 }
