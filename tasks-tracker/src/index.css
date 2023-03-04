@@ -11,12 +11,17 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  display: flex;
+  max-width: 1000px;
+}
+
+.container-child {
+  width: 450px;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
   padding: 30px;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
 }
 
@@ -62,7 +67,7 @@ body {
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 8px solid green;
 }
 
 .task h3 {
@@ -119,5 +124,4 @@ footer {
   cursor: pointer;
   font-size: 12px;
   border-radius: 5px;
-
 }
